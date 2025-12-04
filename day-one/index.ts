@@ -1,8 +1,7 @@
 const dialStart: number = 0;
 const dialEnd: number = 99;
-let dialPosition: number = 50;
 
-function runner(instructions: string[]):number {
+function runner(instructions: string[], dialPosition:number):number {
 
     const formattedInstructions = instructions.map((ins) => {
         return {
@@ -25,7 +24,6 @@ function runner(instructions: string[]):number {
                 }
             }
         }
-        
         if (dialPosition === 0) {
             acc = acc + 1;
         }
