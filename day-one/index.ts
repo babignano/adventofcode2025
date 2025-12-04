@@ -1,7 +1,7 @@
 const dialStart: number = 0;
 const dialEnd: number = 99;
 
-function runner(instructions: string[], dialPosition:number):number {
+function runner(instructions: string[], dialPosition:number, anyclick: boolean = false):number {
 
     const formattedInstructions = instructions.map((ins) => {
         return {
@@ -23,11 +23,17 @@ function runner(instructions: string[], dialPosition:number):number {
                     dialPosition = 99;
                 }
             }
+
+            if (anyclick === false) {
+                if (dialPosition === 0 && current.clicks === 0) {
+                    acc = acc + 1;
+                }
+            } else {
+                if (dialPosition === 0) {
+                    acc = acc + 1;
+                }
+            }
         }
-        if (dialPosition === 0) {
-            acc = acc + 1;
-        }
-        
         return acc;
     }, 0)
 
