@@ -1,5 +1,3 @@
-
-
 function runner(productIds: string[], onlyTwice: boolean = false): number {
 
     const result = productIds.reduce((acc, current) => {
@@ -35,13 +33,23 @@ function populateIds(productId: string): number[] {
     return result;
 }
 
-
-function invalidId(productId: string, onlyTwice: boolean) {
+function invalidId(productId: string, onlyTwice: boolean = false) {
 
     let len:number = productId.length;
     let hasDupe: boolean = false;
 
-    // repeat up to half the length
+    // check if part one and if odd
+    if (onlyTwice && len % 2 === 1) {
+        return false;
+    }
+
+    // check if all same charactar and pass
+    const firstChar = productId[0];
+    if ([...productId].every(char => char === firstChar[0]) && productId.length > 1) {
+        console.log('yes', productId)
+        return true;
+    }
+
     for (let i: number = 1; i < len; i++) {
 
         let chunkSize = i; // 1
@@ -63,30 +71,5 @@ function invalidId(productId: string, onlyTwice: boolean) {
 
     return hasDupe;
 }
-
-// function invalidId(productId: string) {
-
-//     let len:number = productId.length;
-
-//     // odd lengths are out as the pattern needs to be repeated twice
-//     //if (len % 2 === 1) {
-//     //    return false;
-//     //}
-
-//     // repeat up to half the length
-//     for (let i: number = 0; i <= len; i++) {
-//         const firstChunk = productId.substring(0, i + 1)
-//         const nextChunk = productId.substring(i + 1, i + i + 2);
-
-//         // console.log('firstChunk, nextChunk, i, len', firstChunk, nextChunk, i, len / 2)
-//         if (firstChunk === nextChunk && i + 1 === len / 2) {
-//             return true
-//         }
-//     }
-
-//     return false;
-// }
-
-
 
 export { runner, invalidId, populateIds }
