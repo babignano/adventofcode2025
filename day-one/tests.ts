@@ -35,4 +35,3 @@ test('Run day one part two real input', { concurrency: true }, () => {
     const expected: number = 6689;
     assert.equal(actual, expected);
 });
-
