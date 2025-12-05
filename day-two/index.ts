@@ -46,7 +46,6 @@ function invalidId(productId: string, onlyTwice: boolean = false) {
     // check if all same charactar and pass
     const firstChar = productId[0];
     if ([...productId].every(char => char === firstChar[0]) && productId.length > 1) {
-        console.log('yes', productId)
         return true;
     }
 

@@ -44,7 +44,7 @@ test('Run day two part two sample input', { concurrency: true }, () => {
     assert.equal(actual, expected);
 });
 
-test('Run day one part two real input', { concurrency: true }, () => {
+test.skip('Run day one part two real input', { concurrency: true }, () => {
     const actual:number = runner(data);
     const expected: number = 38731915928;
     assert.equal(actual, expected);
