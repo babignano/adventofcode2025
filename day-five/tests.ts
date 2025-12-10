@@ -12,7 +12,7 @@ try {
     throw new Error('Error reading file synchronously');
 }
 
-test('Run day four part one sample input', { concurrency: true }, () => {
+test('Run day five part one sample input', { concurrency: true }, () => {
     const actual = runner([
         '3-5',
         '10-14',
@@ -30,13 +30,13 @@ test('Run day four part one sample input', { concurrency: true }, () => {
     assert.equal(actual, expected);
 });
 
-test('Run day four part one real input', { concurrency: true }, () => {
+test('Run day five part one real input', { concurrency: true }, () => {
     const actual = runner(data[0].split('\n'), data[1].split('\n'));
     const expected: number = 782;
     assert.equal(actual, expected);
 });
 
-test('Run day four part two sample input', { concurrency: true }, () => {
+test('Run day five part two sample input', { concurrency: true }, () => {
     const actual = runner([
         '3-5',
         '5-5',
@@ -56,7 +56,7 @@ test('Run day four part two sample input', { concurrency: true }, () => {
     assert.equal(actual, expected);
 });
 
-test('Run day four part two part partial real input 1', { concurrency: true }, () => {
+test('Run day five part two part partial real input 1', { concurrency: true }, () => {
     const actual = runner([
         '271989803577321-279602339477609',
         '424856501898112-428035763754024',
@@ -90,7 +90,7 @@ test('Run day four part two part partial real input 1', { concurrency: true }, (
     assert.equal(actual, expected);
 });
 
-test('Run day four part two part partial real input 2', { concurrency: true }, () => {
+test('Run day five part two part partial real input 2', { concurrency: true }, () => {
     const actual = runner([
         '259579144927094-259887082783455',
         '525437082250281-526791498069427',
@@ -124,7 +124,7 @@ test('Run day four part two part partial real input 2', { concurrency: true }, (
     assert.equal(actual, expected);
 });
 
-test('Run day four part two real input', { concurrency: true }, () => {
+test('Run day five part two real input', { concurrency: true }, () => {
     const actual = runner(data[0].split('\n'), data[1].split('\n'), 2);
     const expected: number = 353863745078671;
     assert.equal(actual, expected);
