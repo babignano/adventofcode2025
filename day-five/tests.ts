@@ -12,7 +12,7 @@ try {
     throw new Error('Error reading file synchronously');
 }
 
-test.skip('Run day four part one sample input', { concurrency: true }, () => {
+test('Run day four part one sample input', { concurrency: true }, () => {
     const actual = runner([
         '3-5',
         '10-14',
@@ -30,13 +30,13 @@ test.skip('Run day four part one sample input', { concurrency: true }, () => {
     assert.equal(actual, expected);
 });
 
-test.skip('Run day four part one real input', { concurrency: true }, () => {
+test('Run day four part one real input', { concurrency: true }, () => {
     const actual = runner(data[0].split('\n'), data[1].split('\n'));
     const expected: number = 782;
     assert.equal(actual, expected);
 });
 
-test.skip('Run day four part two sample input', { concurrency: true }, () => {
+test('Run day four part two sample input', { concurrency: true }, () => {
     const actual = runner([
         '3-5',
         '5-5',
