@@ -1,11 +1,9 @@
-import { isStringOneByteRepresentation } from "v8";
-
 type Range = {
     high: number
     low: number
 };
 
-function runner(ranges: string[], ids: string[], part: number):number {
+function runner(ranges: string[], ids: string[], part: number = 1):number {
     
     function partOne(ranges: string[], ids: string[]): number {
         const matches = ids.reduce((acc, current):number[] => {
